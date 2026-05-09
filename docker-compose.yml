@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: guardrails-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: guardrails_db
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:7
+    container_name: guardrails-redis
+    ports:
+      - "6379:6379"
